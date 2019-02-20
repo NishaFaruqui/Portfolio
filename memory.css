@@ -1,0 +1,64 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 20px 0;
+  background: #6589F9;
+  background-image: url('https://i.imgur.com/bGFxpcT.gif');
+  background-size: 250px;
+  background-repeat: no-repeat;
+  position: static;
+}
+
+.grid {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  position: relative;
+  transition: all .4s linear;
+  transform-style: preserve-3d;
+  margin: 5px;
+}
+
+.card,
+.back,
+.front {
+  height: 150px;
+  width: 150px;
+}
+
+.back,
+.front {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front {
+  z-index: 2;
+  background: #b7db33 url('https://vignette.wikia.nocookie.net/90scartoons/images/2/27/Nickelodeon_Logo.png/revision/latest?cb=20140216020359') no-repeat center center / contain;
+cursor: pointer;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background-color: #cba5a9;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.selected {
+  transform: rotateY(180deg);
+}
+
+.match .front {
+  background: #6589F9 !important;
+}

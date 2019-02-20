@@ -1,0 +1,45 @@
+/* CSS layout */
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	min-width: 600px;
+}
+
+#left_col {
+	float: left;
+	width: 200px;
+}
+
+#right_col {
+	float: right;
+	width: 200px;
+}
+
+#page_content {
+	margin-right: 200px;
+	margin-left: 200px;
+}
+
+#container {
+
+	background-image: url('images/sun.jpeg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 1100px;
+	height: 950px;
+	margin-right: auto;
+	margin-left: auto;
+}
+body {
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	font-family: 'Domine', serif;
+	font-size: 15px;
+	color: #ee8c29;
+	background-color: #000000;
+
+}

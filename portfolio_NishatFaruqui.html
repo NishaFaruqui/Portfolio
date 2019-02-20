@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>Nishat's Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="nav.css">
+<link href="https://fonts.googleapis.com/css?family=Marmelad" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+
+
+<style>
+body {
+  font-family: 'Marmelad', sans-serif;
+  font-size: 20px;
+  background-color: black;
+  background-image: url("http://i68.tinypic.com/20j04dy.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+}
+
+#typewriter {
+  font-size: 2.4em;
+  margin: 10;
+  font-family: "Courier New";
+}
+#typewriter:after {
+  content: "|";
+  color: grey;
+  font-weight: bold;
+  -webkit-animation: blink 500ms linear infinite alternate;
+          animation: blink 500ms linear infinite alternate;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.3);
+  font-family: 'Varela Round', sans-serif;
+    font-size: 24px;
+    color: white;
+    padding: 10px;
+    width: 600px;
+    text-align: right;
+    position: absolute;
+    bottom: 20;
+}
+
+</style>
+</head>
+<body>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="portfolio_NishatFaruqui.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <span class="home" style="font-size:22px;cursor:pointer" onclick="openNav()">&#9776; Navigation</span>
+  <pre id="typewriter">
+  <span class="var-highlight">Welcome to Nishat's Portfolio...</span> </pre>
+<footer>
+<p>Front End Web Developer </p>
+</footer>
+  <script>
+  function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+  }
+  function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+  }
+  </script>
+
+<script>
+function setupTypewriter(t) {
+       var HTML = t.innerHTML;
+       t.innerHTML = "";
+       var cursorPosition = 0,
+           tag = "",
+           writingTag = false,
+           tagOpen = false,
+           typeSpeed = 100,
+       tempTypeSpeed = 0;
+
+       var type = function() {
+           if (writingTag === true) {
+               tag += HTML[cursorPosition];
+           }
+           if (HTML[cursorPosition] === "<") {
+               tempTypeSpeed = 0;
+               if (tagOpen) {
+                   tagOpen = false;
+                   writingTag = true;
+               } else {
+                   tag = "";
+                   tagOpen = true;
+                   writingTag = true;
+                   tag += HTML[cursorPosition];
+               }
+           }
+           if (!writingTag && tagOpen) {
+               tag.innerHTML += HTML[cursorPosition];
+           }
+           if (!writingTag && !tagOpen) {
+               if (HTML[cursorPosition] === " ") {
+                   tempTypeSpeed = 0;
+               }
+               else {
+                   tempTypeSpeed = (Math.random() * typeSpeed) + 50;
+               }
+               t.innerHTML += HTML[cursorPosition];
+           }
+           if (writingTag === true && HTML[cursorPosition] === ">") {
+               tempTypeSpeed = (Math.random() * typeSpeed) + 50;
+               writingTag = false;
+               if (tagOpen) {
+                   var newSpan = document.createElement("span");
+                   t.appendChild(newSpan);
+                   newSpan.innerHTML = tag;
+                   tag = newSpan.firstChild;
+               }
+           }
+           cursorPosition += 1;
+           if (cursorPosition < HTML.length - 1) {
+               setTimeout(type, tempTypeSpeed);
+           }
+       };
+       return {
+           type: type
+       };
+   }
+
+   var typer = document.getElementById('typewriter');
+   typewriter = setupTypewriter(typewriter);
+   typewriter.type();
+</script>
+</body>
+</html>

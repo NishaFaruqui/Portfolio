@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>Nishat's Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="nav.css">
+<link href="https://fonts.googleapis.com/css?family=Antic" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Antic', sans-serif;
+  font-size: 20px;
+  background-color: black;
+  background-image: url("pics/petals.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.3);
+    color: white;
+		padding: 14px;
+		border-radius: 6px;
+    width: 600px;
+}
+
+input {
+  line-height: 1.6;
+	padding: 0.1em 0.5em;
+}
+
+.button {
+  background-color: #f090f8;
+  border: none;
+  border-radius: 2px;
+  color: black;
+  padding: 8px 9px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Arial;
+  margin: 4px 2px;
+  transition: 0.3s;
+}
+.button:hover {
+  background-color: #e189d7;
+  cursor: pointer;
+}
+
+#note {
+  color:  #f090f8;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+#logo {
+  margin-top: -10px;
+}
+</style>
+<body>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="portfolio_NishatFaruqui.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <span class="home" style="font-size:22px;cursor:pointer" onclick="openNav()">&#9776; Navigation</span>
+<center><img id="logo" src="pics/contact.png" width="15%"></a></br>
+<img src="pics/pp.gif"></a>
+</br>
+
+
+  <div class="container">
+  	<div class="contact-cont">
+  	<strong><p id="note">*For future communications, please send an email to nizfaruqui512@gmail.com </p>
+  </strong>
+  	<div class="contact">
+  		<form action="mailto:nizfaruqui512@gmail.com" method="post" enctype="text/plain" name= "commentform" id="vol-form">
+  		<div class="form-section">
+  		<span>First Name:</span>
+  		<input class= "inputForm" type="text" name="fname" id="fname" placeholder="First Name">
+  		</div></br>
+  		<div class="form-section">
+  		<span>Last Name:</span>
+  		<input class= "inputForm" type="text" name="lname" id="lname" placeholder="Last Name">
+  		</div>
+  		<div class="form-section"></br>
+  		<span>Email:</span>
+  		<input type="email" id="email" name="email" placeholder="Enter email address" pattern="/^[A-Za-z0-9_\-\.])+\@(A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/">
+  		</div></br>
+      <div class="form-section">
+      <span>Comment:</span>
+      <textarea rows="10" cols="77" id="comment" placeholder="Write something..."></textarea>
+      </div></br>
+  		<!-- submission button -->
+  		<input class="button" type= "submit" value="Submit">
+  		<!--<input type="submit" class= "btn" value="Submit" onclick="finalValid() + window.alert('Thank you, ' +
+  		document.validation.fname.value + ' ' + document.validation.lname.value );"> -->
+  		</form></div>
+  </div>
+  <img src="pics/pp.gif"></a>
+
+  <script>
+  function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+  }
+  function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+  }
+  </script>
+</center>
+</body>
+</html>
